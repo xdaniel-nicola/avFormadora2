@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      API
+      <ion-button [routerLink]="['/api-page']">
+        <ion-icon slot="icon-only" name="arrow-back-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalhes da Obra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">workDetails</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  @if (work) {
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> {{ work.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Descrição</strong> {{ getDescription(work.description) }}</p>
+        <p><strong>Assuntos</strong> {{ work.subjects?.join(', ') || 'Sem assuntos disponíveis'}}</p>
+        <p><strong>Primeira publicação:</strong> {{ work.first_publish_date }}</p>
+      </ion-card-content>
+    </ion-card>
+  }
+</ion-content>

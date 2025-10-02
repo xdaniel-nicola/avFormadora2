@@ -1,0 +1,12 @@
+.navigate-buttons {
+  position: relative;
+  width: 100%;
+  height: 60px; // altura suficiente para os botões
+}
+
+.navigate-forward {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
