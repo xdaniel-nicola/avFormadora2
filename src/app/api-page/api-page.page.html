@@ -18,8 +18,8 @@
   </ion-header>
 
   <ion-item>
-    <ion-input [(ngModel)]="query" placeholder="Digite o nome do livro"></ion-input>
-    <ion-button (click)="searchBooks()">Buscar</ion-button>
+    <ion-input [(ngModel)]="query" placeholder="Procure por livros, autores..."></ion-input>
+    <ion-button color="medium" (click)="searchBooks()">Buscar</ion-button>
   </ion-item>
 
   <ion-list>
@@ -37,7 +37,7 @@
       <ion-label>
         <h2>{{ book.title }}</h2>
         <p><strong>Autor: </strong> {{authors[book.author_key?.[0]]?.name || 'Carregando...' }}</p>
-        <ion-button [routerLink]="['/work', book.key?.split('/')[2]]">Ver detalhes</ion-button>
+        <ion-button color="medium" [routerLink]="['/work', book.key?.split('/')[2]]">Ver detalhes</ion-button>
       </ion-label>
     </ion-item>
   }
